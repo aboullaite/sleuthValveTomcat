@@ -1,0 +1,20 @@
+server:
+  port: 8082
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: "%t %{X-B3-TraceId}i %r %U %s %b %a %T %{User-Agent}i %{Referer}i"
+      directory: /tmp/${spring.application.name}
+      prefix: access_log
+      suffix: .log
+
+logging:
+  ROOT: INFO
+
+spring:
+  application:
+    name: service1
+
+services:
+  service2:
+    url: http://localhost:8083/service2

@@ -1,0 +1,20 @@
+server:
+  port: 8081
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: "%t %{X-B3-TraceId}i %r %U %s %b %a %T %{User-Agent}i %{Referer}i"
+      directory: /tmp/${spring.application.name}
+      prefix: access_log
+      suffix: .log
+
+logging:
+  ROOT: INFO
+
+spring:
+  application:
+    name: edgeservice
+
+services:
+  service1:
+    url: http://localhost:8082/service1
