@@ -26,7 +26,6 @@ class SleuthValve extends ValveBase {
 
         Valve next = getNext();
         if (null == next) {
-            // no next valve
             return;
         }
         next.invoke(request, response);

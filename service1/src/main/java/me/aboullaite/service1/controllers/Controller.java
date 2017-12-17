@@ -30,12 +30,12 @@ import org.springframework.web.client.RestTemplate;
             log.info("Inside the service 1 ...");
             log.info("Now let's create some intentional delay...");
 
-            try {
-                Thread.sleep(20 * 1000);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(20 * 1000);
+//            } catch (InterruptedException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
 
             String response = (String) restTemplate.exchange(service2URL, HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
             }).getBody();
